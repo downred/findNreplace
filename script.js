@@ -18,5 +18,7 @@ function updateValue(text) {
 
 // replace function
 function findNreplace() {
-    
+    var regex = /toFind/;
+    var found = projected.textContent.match(regex);
+    console.log(found);
 }
