@@ -6,8 +6,8 @@ document.getElementById("commit").onclick=findNreplace; //set up go button
 //variables
 var textToShow = document.getElementById("inputText");
 var projected = document.getElementById("projectedText");
-var toFind = document.getElementById("find").value;
-var toReplace = document.getElementById("replace").value; 
+var toFind = document.getElementById("find");
+var toReplace = document.getElementById("replace"); 
 
 // set up text area to project the input into the paragraph
 textToShow.addEventListener('input',updateValue);
@@ -18,7 +18,8 @@ function updateValue(text) {
 
 // replace function
 function findNreplace() {
-    var regex = /toFind/;
-    var found = projected.textContent.match(regex);
+    // var regex = /`${toFind.value}`/;
+    var regex = new RegExp(toFind.value, 'g')
+    var found = textToShow.value.match(regex);
     console.log(found);
 }
