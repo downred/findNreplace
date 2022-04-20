@@ -18,8 +18,9 @@ function updateValue(text) {
 
 // replace function
 function findNreplace() {
-    // var regex = /`${toFind.value}`/;
+    var str = projected.innerText;
     var regex = new RegExp(toFind.value, 'g')
-    var found = textToShow.value.match(regex);
-    console.log(found);
+    var found = projected.innerText.match(regex);
+    document.write(str.replace(regex.source, toReplace.value))
+    console.log(regex.source);
 }
